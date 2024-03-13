@@ -1,0 +1,41 @@
+﻿<Window x:Class="Auftragsverwaltung.Views.KundeHinzufuegenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Auftragsverwaltung.Views"
+        mc:Ignorable="d"
+        Title="KundeHinzufuegenWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="LightCyan" Offset="0.0"/>
+                <GradientStop Color="LightSkyBlue" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <TextBlock Text="Kunde hinzufügen" FontSize="20" Margin="10"/>
+
+        <StackPanel>
+            <Label Content="Vorname" Margin="10, 50, 0, 0" VerticalAlignment="Top" HorizontalAlignment="left"/>
+            <TextBox Name="TxtVorname" Height="30" Width="200" Margin="10, 0, 0, 0" HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
+
+            <Label Content="Nachname" Margin="10, 10, 0, 0" VerticalAlignment="Top" HorizontalAlignment="left"/>
+            <TextBox Name="TxtNachname" Height="30" Width="200" Margin="10, 0, 0, 0" HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
+
+            <Label Content="Email" Margin="10, 10, 0, 0" VerticalAlignment="Top" HorizontalAlignment="left"/>
+            <TextBox  Height="30" Width="200" Margin="10, 0, 0, 0" HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
+
+            <Label Content="Webseite" Margin="10, 10, 0, 0" VerticalAlignment="Top" HorizontalAlignment="left"/>
+            <TextBox  Height="30" Width="200" Margin="10, 0, 0, 0" HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
+            
+            <Label Content="Passwort" Margin="10, 10, 0, 0" VerticalAlignment="Top" HorizontalAlignment="left"/>
+            <TextBox  Height="30" Width="200" Margin="10, 0, 0, 0" HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
+
+            <Button Height="30" Content="Hinzufügen" Click="HinzufuegenButton" Width="200"  VerticalContentAlignment="Center" Padding="5" Margin="10,10,0,0" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="#E0E0E0" />
+        </StackPanel>
+    
+        
+        
+    </Grid>
+</Window>

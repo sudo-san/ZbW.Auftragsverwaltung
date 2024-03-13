@@ -1,0 +1,48 @@
+﻿<Window x:Class="Auftragsverwaltung.KundeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Auftragsverwaltung"
+        mc:Ignorable="d"
+        Title="KundeWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="LightCyan" Offset="0.0"/>
+                <GradientStop Color="LightSkyBlue" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Kundenverwaltung" FontSize="20" Margin="10"/>
+        <Button Grid.Row="1" Grid.Column="1" Content="Hinzufügen" Click="KundeHinzufuegen" Margin="10"></Button>
+
+        <Button Grid.Row="1" Grid.Column="2" x:Name="KundeEditieren" Content="Editieren" Margin="10"></Button>
+        <Button Grid.Row="1" Grid.Column="3" x:Name="KundeLoeschen" Content="Löschen" Margin="10"></Button>
+
+        <TextBox Grid.Row="1" x:Name="KundeSuchen" Margin="10"></TextBox>
+        <ListView Name="KundeListe" BorderBrush="#cdcdcd" Grid.Row="2" Grid.ColumnSpan="4" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Checkbox" Width="60"/>
+                    <GridViewColumn Header="Kundennummer" Width="100"/>
+                    <GridViewColumn Header="Vorname" DisplayMemberBinding="{Binding Vorname}" Width="100"/>
+                    <GridViewColumn Header="Nachname" DisplayMemberBinding="{Binding Nachname}" Width="100"/>
+                    <GridViewColumn Header="Email" Width="100"/>
+                    <GridViewColumn Header="Webseite" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
