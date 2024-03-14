@@ -12,16 +12,12 @@ namespace Auftragsverwaltung.Models
     {
         [Key]
         public int ArtikelgruppeID { get; set; }
+
         public string Name { get; set; }
-        public virtual ICollection<Artikel>
-            Artikels
-        { get; private set; } = new ObservableCollection<Artikel>();
-        public Artikelgruppe UebergeordneteGruppe { get; set; } // Hierarchie: übergeordnete Artikelgruppe
 
-        // Konstruktor für Artikelgruppe
-        public Artikelgruppe()
-        {
+        public virtual ICollection<Artikel> Artikels { get; set; }
 
-        }
+        public Artikelgruppe UebergeordneteGruppe { get; set; }
+
     }
 }

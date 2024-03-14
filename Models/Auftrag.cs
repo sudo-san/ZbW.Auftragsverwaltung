@@ -11,17 +11,19 @@ namespace Auftragsverwaltung.Models
     public class Auftrag
     {
         [Key]
-        public int KundeID { get; set; }
-
         public int Auftragsnummer { get; set; }
 
         public DateTime Datum { get; set; }
 
-        // Fremdschlüssel für die Beziehung
         public int KundenId { get; set; }
 
-        // Navigation Property für One-to-Many-Beziehung
         public Kunde Kunde { get; set; }
+
+        public int AdresseId { get; set; }
+
+        public Adresse Adresse { get; set; }
+
+        public ICollection<Auftragsposition> Auftragspositionen { get; set; }
 
         public Auftrag() 
         {

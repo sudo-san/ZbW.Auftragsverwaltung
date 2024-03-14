@@ -28,19 +28,17 @@
         <TextBlock Grid.Row="0" Text="Kundenverwaltung" FontSize="20" Margin="10"/>
         <Button Grid.Row="1" Grid.Column="1" Content="Hinzufügen" Click="KundeHinzufuegen" Margin="10"></Button>
 
-        <Button Grid.Row="1" Grid.Column="2" x:Name="KundeEditieren" Content="Editieren" Margin="10"></Button>
-        <Button Grid.Row="1" Grid.Column="3" x:Name="KundeLoeschen" Content="Löschen" Margin="10"></Button>
+        <Button Grid.Row="1" Grid.Column="2" x:Name="KundeEditieren" Content="Editieren" Click="KundeEditieren_Click" Margin="10"></Button>
+        <Button Grid.Row="1" Grid.Column="3" x:Name="KundeLoeschen" Content="Löschen" Click="KundeLoeschen_Click" Margin="10"></Button>
 
-        <TextBox Grid.Row="1" x:Name="KundeSuchen" Margin="10"></TextBox>
+        <TextBox Grid.Row="1" x:Name="KundeSuchen" TextChanged="KundeSuchen_TextChanged" Margin="10"></TextBox>
         <ListView Name="KundeListe" BorderBrush="#cdcdcd" Grid.Row="2" Grid.ColumnSpan="4" Margin="10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Checkbox" Width="60"/>
-                    <GridViewColumn Header="Kundennummer" Width="100"/>
-                    <GridViewColumn Header="Vorname" DisplayMemberBinding="{Binding Vorname}" Width="100"/>
-                    <GridViewColumn Header="Nachname" DisplayMemberBinding="{Binding Nachname}" Width="100"/>
-                    <GridViewColumn Header="Email" Width="100"/>
-                    <GridViewColumn Header="Webseite" Width="100"/>
+                    <GridViewColumn Header="Vorname" DisplayMemberBinding="{Binding Vorname}" Width="150"/>
+                    <GridViewColumn Header="Nachname" DisplayMemberBinding="{Binding Nachname}" Width="150"/>
+                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Mail}" Width="150"/>
+                    <GridViewColumn Header="Webseite" DisplayMemberBinding="{Binding Website}" Width="150"/>
                 </GridView>
             </ListView.View>
         </ListView>

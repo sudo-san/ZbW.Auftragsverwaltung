@@ -4324,11 +4324,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DEV\\C#\\ZbW\\Auftragsverwaltung\\Auftragsverwaltung.csproj",
+      "projectUniqueName": "C:\\DEV\\ZbW.Auftragsverwaltung\\Auftragsverwaltung.csproj",
       "projectName": "Auftragsverwaltung",
-      "projectPath": "C:\\DEV\\C#\\ZbW\\Auftragsverwaltung\\Auftragsverwaltung.csproj",
+      "projectPath": "C:\\DEV\\ZbW.Auftragsverwaltung\\Auftragsverwaltung.csproj",
       "packagesPath": "C:\\Users\\benja\\.nuget\\packages\\",
-      "outputPath": "C:\\DEV\\C#\\ZbW\\Auftragsverwaltung\\obj\\",
+      "outputPath": "C:\\DEV\\ZbW.Auftragsverwaltung\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\benja\\AppData\\Roaming\\NuGet\\NuGet.Config",

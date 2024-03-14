@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UJxtOWlpXyfv7JACsASR3f1Z3xxX5uXhIi1fSAw6ORrZ4Zn64F9dF7CiIp0+Um3Q2SPHfSiS98y0AwfOSY9hzA==",
+  "dgSpecHash": "pbOIi0vxWkyu+geHgN5dHtN7U02j3PRFm6+8enhp3stXTGKAs61UWF/ctBPQxDSrOsVQ4RSFHwO6lWcGh46Fng==",
   "success": true,
-  "projectFilePath": "C:\\DEV\\C#\\ZbW\\Auftragsverwaltung\\Auftragsverwaltung.csproj",
+  "projectFilePath": "C:\\DEV\\ZbW.Auftragsverwaltung\\Auftragsverwaltung.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\benja\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\benja\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

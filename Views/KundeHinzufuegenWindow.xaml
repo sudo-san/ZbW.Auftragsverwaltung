@@ -14,7 +14,7 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <TextBlock Text="Kunde hinzufügen" FontSize="20" Margin="10"/>
+        <TextBlock Text="Kunde hinzufügen / bearbeiten" FontSize="20" Margin="10"/>
 
         <StackPanel>
             <Label Content="Vorname" Margin="10, 50, 0, 0" VerticalAlignment="Top" HorizontalAlignment="left"/>
@@ -24,15 +24,15 @@
             <TextBox Name="TxtNachname" Height="30" Width="200" Margin="10, 0, 0, 0" HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
 
             <Label Content="Email" Margin="10, 10, 0, 0" VerticalAlignment="Top" HorizontalAlignment="left"/>
-            <TextBox  Height="30" Width="200" Margin="10, 0, 0, 0" HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
+            <TextBox Name="TxtMail" Height="30" Width="200" Margin="10, 0, 0, 0" HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
 
             <Label Content="Webseite" Margin="10, 10, 0, 0" VerticalAlignment="Top" HorizontalAlignment="left"/>
-            <TextBox  Height="30" Width="200" Margin="10, 0, 0, 0" HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
+            <TextBox Name="TxtWebsite" Height="30" Width="200" Margin="10, 0, 0, 0" HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
             
             <Label Content="Passwort" Margin="10, 10, 0, 0" VerticalAlignment="Top" HorizontalAlignment="left"/>
-            <TextBox  Height="30" Width="200" Margin="10, 0, 0, 0" HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
+            <TextBox Name="TxtPasswort" Height="30" Width="200" Margin="10, 0, 0, 0" HorizontalAlignment="left" BorderThickness="1" BorderBrush="#E0E0E0" />
 
-            <Button Height="30" Content="Hinzufügen" Click="HinzufuegenButton" Width="200"  VerticalContentAlignment="Center" Padding="5" Margin="10,10,0,0" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="#E0E0E0" />
+            <Button Height="30" Content="Speichern" Click="HinzufuegenButton" Width="200"  VerticalContentAlignment="Center" Padding="5" Margin="10,10,0,0" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="#E0E0E0" />
         </StackPanel>
     
         

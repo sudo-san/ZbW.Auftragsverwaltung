@@ -24,10 +24,16 @@ namespace Auftragsverwaltung.Models
         public string? Passwort { get; set; }
 
         public ICollection<Auftrag> Auftraege { get; set; }
+        public ICollection<Adresse> Adressen { get; set; }
 
         public Kunde() 
         {
 
+        }
+
+        public override string ToString()
+        {
+            return $"{Vorname} {Nachname}";
         }
 
     }

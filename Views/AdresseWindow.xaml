@@ -27,20 +27,18 @@
 
         <TextBlock Grid.Row="0" Text="Adressverwaltung" FontSize="20" Margin="10"/>
 
-        <TextBox Grid.Row="1" x:Name="AdresseSuchen" Margin="10"></TextBox>
+        <TextBox Grid.Row="1" x:Name="AdresseSuchen" TextChanged="AdresseSuchen_TextChanged" Margin="10"></TextBox>
         <Button Grid.Row="1" Grid.Column="1" x:Name="AdresseHinzufuegen" Click="AdresseHinzufuegen_Click" Content="Hinzufügen" Margin="10"></Button>
-        <Button Grid.Row="1" Grid.Column="2" x:Name="AdresseEditieren" Content="Editieren" Margin="10"></Button>
-        <Button Grid.Row="1" Grid.Column="3" x:Name="AdresseLoeschen" Content="Löschen" Margin="10"></Button>
+        <Button Grid.Row="1" Grid.Column="2" x:Name="AdresseEditieren" Click="AdresseEditieren_Click" Content="Editieren" Margin="10"></Button>
+        <Button Grid.Row="1" Grid.Column="3" x:Name="AdresseLoeschen" Click="AdresseLoeschen_Click" Content="Löschen" Margin="10"></Button>
 
         <ListView Name="AdresseListe" BorderBrush="#cdcdcd" Grid.Row="2" Grid.ColumnSpan="4" Margin="10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Checkbox" Width="60"/>
-                    <GridViewColumn Header="Nummer" Width="100"/>
-                    <GridViewColumn Header="Kunde" Width="100"/>
-                    <GridViewColumn Header="Strasse" Width="100"/>
-                    <GridViewColumn Header="PLZ" Width="100"/>
-                    <GridViewColumn Header="Ort" Width="100"/>
+                    <GridViewColumn Header="Kunde" DisplayMemberBinding="{Binding Kunde}" Width="100"/>
+                    <GridViewColumn Header="Strasse" DisplayMemberBinding="{Binding Strasse}" Width="100"/>
+                    <GridViewColumn Header="PLZ" DisplayMemberBinding="{Binding PLZ}" Width="100"/>
+                    <GridViewColumn Header="Ort" DisplayMemberBinding="{Binding Ort}" Width="100"/>
                 </GridView>
             </ListView.View>
         </ListView>

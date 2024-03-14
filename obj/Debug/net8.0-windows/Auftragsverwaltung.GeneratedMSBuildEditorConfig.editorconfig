@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Auftragsverwaltung
-build_property.ProjectDir = C:\DEV\C#\ZbW\Auftragsverwaltung\
+build_property.ProjectDir = C:\DEV\ZbW.Auftragsverwaltung\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -18,6 +18,8 @@ namespace Auftragsverwaltung.Models
 
         public string? Ort { get; set; }
 
+        public int KundeId { get; set; }
+        public Kunde Kunde { get; set; }
         public Adresse() 
         {
         

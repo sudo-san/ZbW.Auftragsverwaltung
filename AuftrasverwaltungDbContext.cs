@@ -35,5 +35,20 @@ namespace Auftragsverwaltung
             // Logging
             optionsBuilder.LogTo(Console.WriteLine);
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Adresse>()
+                .HasOne(a => a.Kunde)
+                .WithMany(k => k.Adressen)
+                .HasForeignKey(a => a.KundeId)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<Artikelgruppe>()
+                .HasOne(ag => ag.UebergeordneteGruppe)
+                .WithMany() 
+                .OnDelete(DeleteBehavior.ClientSetNull);
+        }
+
     }
 }

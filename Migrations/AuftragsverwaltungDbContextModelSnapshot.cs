@@ -22,38 +22,89 @@ namespace Auftragsverwaltung.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Auftragsverwaltung.Artikel", b =>
+            modelBuilder.Entity("Auftragsverwaltung.Models.Adresse", b =>
                 {
-                    b.Property<int>("ArtikelID")
+                    b.Property<int>("AdresseID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ArtikelID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdresseID"));
 
-                    b.Property<int>("Artikelgruppe")
+                    b.Property<int>("KundeId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Artikelname")
+                    b.Property<string>("Ort")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PLZ")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Strasse")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AdresseID");
+
+                    b.HasIndex("KundeId");
+
+                    b.ToTable("Adresse");
+                });
+
+            modelBuilder.Entity("Auftragsverwaltung.Models.Artikel", b =>
+                {
+                    b.Property<int>("ArtikelNr")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ArtikelNr"));
+
+                    b.Property<int>("ArtikelgruppeID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Bezeichnung")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Artikelnummer")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("Preis")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("ArtikelID");
+                    b.HasKey("ArtikelNr");
+
+                    b.HasIndex("ArtikelgruppeID");
 
                     b.ToTable("Artikel");
                 });
 
-            modelBuilder.Entity("Auftragsverwaltung.Auftrag", b =>
+            modelBuilder.Entity("Auftragsverwaltung.Models.Artikelgruppe", b =>
                 {
-                    b.Property<int>("KundeID")
+                    b.Property<int>("ArtikelgruppeID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KundeID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ArtikelgruppeID"));
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UebergeordneteGruppeArtikelgruppeID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ArtikelgruppeID");
+
+                    b.HasIndex("UebergeordneteGruppeArtikelgruppeID");
+
+                    b.ToTable("Artikelgruppe");
+                });
+
+            modelBuilder.Entity("Auftragsverwaltung.Models.Auftrag", b =>
+                {
                     b.Property<int>("Auftragsnummer")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Auftragsnummer"));
+
+                    b.Property<int>("AdresseId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Datum")
@@ -65,14 +116,49 @@ namespace Auftragsverwaltung.Migrations
                     b.Property<int>("KundenNr")
                         .HasColumnType("int");
 
-                    b.HasKey("KundeID");
+                    b.HasKey("Auftragsnummer");
+
+                    b.HasIndex("AdresseId");
 
                     b.HasIndex("KundenNr");
 
-                    b.ToTable("Auftrageblablabd");
+                    b.ToTable("Auftrag");
                 });
 
-            modelBuilder.Entity("Auftragsverwaltung.Kunde", b =>
+            modelBuilder.Entity("Auftragsverwaltung.Models.Auftragsposition", b =>
+                {
+                    b.Property<int>("AuftragspositionID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AuftragspositionID"));
+
+                    b.Property<int>("Anzahl")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ArtikelID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Auftragsnummer")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Auftragsnummer1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Position")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Preis")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("AuftragspositionID");
+
+                    b.HasIndex("Auftragsnummer1");
+
+                    b.ToTable("Auftragsposition");
+                });
+
+            modelBuilder.Entity("Auftragsverwaltung.Models.Kunde", b =>
                 {
                     b.Property<int>("KundenNr")
                         .ValueGeneratedOnAdd()
@@ -100,19 +186,81 @@ namespace Auftragsverwaltung.Migrations
                     b.ToTable("Kunde");
                 });
 
-            modelBuilder.Entity("Auftragsverwaltung.Auftrag", b =>
+            modelBuilder.Entity("Auftragsverwaltung.Models.Adresse", b =>
                 {
-                    b.HasOne("Auftragsverwaltung.Kunde", "Kunde")
-                        .WithMany("Auftraege")
-                        .HasForeignKey("KundenNr")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("Auftragsverwaltung.Models.Kunde", "Kunde")
+                        .WithMany("Adressen")
+                        .HasForeignKey("KundeId")
                         .IsRequired();
 
                     b.Navigation("Kunde");
                 });
 
-            modelBuilder.Entity("Auftragsverwaltung.Kunde", b =>
+            modelBuilder.Entity("Auftragsverwaltung.Models.Artikel", b =>
                 {
+                    b.HasOne("Auftragsverwaltung.Models.Artikelgruppe", "Artikelgruppe")
+                        .WithMany("Artikels")
+                        .HasForeignKey("ArtikelgruppeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Artikelgruppe");
+                });
+
+            modelBuilder.Entity("Auftragsverwaltung.Models.Artikelgruppe", b =>
+                {
+                    b.HasOne("Auftragsverwaltung.Models.Artikelgruppe", "UebergeordneteGruppe")
+                        .WithMany()
+                        .HasForeignKey("UebergeordneteGruppeArtikelgruppeID")
+                        .IsRequired();
+
+                    b.Navigation("UebergeordneteGruppe");
+                });
+
+            modelBuilder.Entity("Auftragsverwaltung.Models.Auftrag", b =>
+                {
+                    b.HasOne("Auftragsverwaltung.Models.Adresse", "Adresse")
+                        .WithMany()
+                        .HasForeignKey("AdresseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Auftragsverwaltung.Models.Kunde", "Kunde")
+                        .WithMany("Auftraege")
+                        .HasForeignKey("KundenNr")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Adresse");
+
+                    b.Navigation("Kunde");
+                });
+
+            modelBuilder.Entity("Auftragsverwaltung.Models.Auftragsposition", b =>
+                {
+                    b.HasOne("Auftragsverwaltung.Models.Auftrag", "Auftrag")
+                        .WithMany("Auftragspositionen")
+                        .HasForeignKey("Auftragsnummer1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Auftrag");
+                });
+
+            modelBuilder.Entity("Auftragsverwaltung.Models.Artikelgruppe", b =>
+                {
+                    b.Navigation("Artikels");
+                });
+
+            modelBuilder.Entity("Auftragsverwaltung.Models.Auftrag", b =>
+                {
+                    b.Navigation("Auftragspositionen");
+                });
+
+            modelBuilder.Entity("Auftragsverwaltung.Models.Kunde", b =>
+                {
+                    b.Navigation("Adressen");
+
                     b.Navigation("Auftraege");
                 });
 #pragma warning restore 612, 618

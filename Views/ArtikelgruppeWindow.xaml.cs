@@ -23,10 +23,5 @@ namespace Auftragsverwaltung.Views
         {
             InitializeComponent();
         }
-
-        private void ArtikelGruppeSuchen_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

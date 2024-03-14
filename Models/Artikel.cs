@@ -16,19 +16,13 @@ namespace Auftragsverwaltung.Models
         public int ArtikelgruppeID { get; set; }
         public Artikelgruppe Artikelgruppe { get; set; }
 
+
+
         // Konstruktor für Artikel
         public Artikel()
         {
 
         }
 
-        // Braucht es das??
-        //public Artikel(int artikelNr, string bezeichnung, decimal preis, Artikelgruppe artikelgruppe)
-        //{
-        //    ArtikelNr = artikelNr;
-        //    Bezeichnung = bezeichnung;
-        //    Preis = preis;
-        //    Artikelgruppe = artikelgruppe;
-        //}
     }
 }
