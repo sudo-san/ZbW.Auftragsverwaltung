@@ -39,5 +39,10 @@ namespace Auftragsverwaltung.Views
             isEditMode = true;
 
         }
+
+        private void ArtikelGruppeSpeichern(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

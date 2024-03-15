@@ -16,9 +16,6 @@ namespace Auftragsverwaltung.Models
         public int ArtikelgruppeID { get; set; }
         public Artikelgruppe Artikelgruppe { get; set; }
 
-
-
-        // Konstruktor für Artikel
         public Artikel()
         {
 

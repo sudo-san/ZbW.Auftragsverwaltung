@@ -112,9 +112,9 @@ namespace Auftragsverwaltung
                     var kunde = context.Kunde.FirstOrDefault(k => k.Vorname == vorname && k.Nachname == nachname);
                     if (kunde != null)
                     {
-                        string mail = kunde.Mail; // Mail vom ausgewählten Kunden abrufen
-                        string website = kunde.Website; // Website vom ausgewählten Kunden abrufen
-                        string passwort = kunde.Passwort; // Passwort vom ausgewählten Kunden abrufen
+                        string mail = kunde.Mail;
+                        string website = kunde.Website; 
+                        string passwort = kunde.Passwort;
 
                         // Öffnen des KundeHinzufuegenWindow mit den ausgewählten Daten
                         KundeHinzufuegenWindow kundeHinzufuegen = new KundeHinzufuegenWindow(this, vorname, nachname, mail, website, passwort);
@@ -154,8 +154,8 @@ namespace Auftragsverwaltung
                         context.SaveChanges();
                     }
 
-                    // Aktualisiere die Kundenliste nach dem Löschen
-                    SucheKunde(string.Empty); // Suche mit leerem Suchbegriff, um alle Kunden zu laden
+                    
+                    SucheKunde(string.Empty);
                 }
             }
             else

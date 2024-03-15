@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\DEV\ZbW.Auftragsverwaltung\App.xaml
-8-537646317
+91347476236
 
-31953049315
+321243962013
 232987475986
-MainWindow.xaml;Views\AdresseHinzufuegenWindow.xaml;Views\AdresseWindow.xaml;Views\ArtikelgruppeWindow.xaml;Views\ArtikelWindow.xaml;Views\AuftragWindow.xaml;Views\KundeHinzufuegenWindow.xaml;Views\KundeWindow.xaml;
+MainWindow.xaml;Views\AdresseHinzufuegenWindow.xaml;Views\AdresseWindow.xaml;Views\ArtikelGruppeHinzufuegenWindow.xaml;Views\ArtikelgruppeWindow.xaml;Views\ArtikelWindow.xaml;Views\AuftragWindow.xaml;Views\KundeHinzufuegenWindow.xaml;Views\KundeWindow.xaml;
 
 False
 

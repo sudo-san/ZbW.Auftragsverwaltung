@@ -93,7 +93,7 @@ namespace Auftragsverwaltung {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Auftragsverwaltung;V1.0.0.0;component/views/adressewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Auftragsverwaltung;component/views/adressewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AdresseWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

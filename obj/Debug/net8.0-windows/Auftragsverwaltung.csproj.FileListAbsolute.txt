@@ -289,3 +289,5 @@ C:\DEV\ZbW.Auftragsverwaltung\obj\Debug\net8.0-windows\refint\Auftragsverwaltung
 C:\DEV\ZbW.Auftragsverwaltung\obj\Debug\net8.0-windows\Auftragsverwaltung.pdb
 C:\DEV\ZbW.Auftragsverwaltung\obj\Debug\net8.0-windows\Auftragsverwaltung.genruntimeconfig.cache
 C:\DEV\ZbW.Auftragsverwaltung\obj\Debug\net8.0-windows\ref\Auftragsverwaltung.dll
+C:\DEV\ZbW.Auftragsverwaltung\obj\Debug\net8.0-windows\Views\ArtikelGruppeHinzufuegenWindow.g.cs
+C:\DEV\ZbW.Auftragsverwaltung\obj\Debug\net8.0-windows\Views\ArtikelGruppeHinzufuegenWindow.baml

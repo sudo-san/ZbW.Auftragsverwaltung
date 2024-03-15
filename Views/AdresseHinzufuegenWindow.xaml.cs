@@ -66,7 +66,7 @@ namespace Auftragsverwaltung.Views
         {
             using (var context = new AuftragsverwaltungDbContext())
             {
-                // Wenn wir uns im Bearbeitungsmodus befinden, aktualisieren wir die vorhandene Adresse
+                
                 if (isEditMode)
                 {
                     var adresse = context.Adresse.FirstOrDefault(k => k.Strasse == existingStrasse && k.PLZ == existingPLZ && k.Ort == existingOrt);
@@ -76,19 +76,19 @@ namespace Auftragsverwaltung.Views
                         adresse.PLZ = TxtPLZ.Text;
                         adresse.Ort = TxtOrt.Text;
 
-                        // Änderungen in der Datenbank speichern
+                        
                         context.SaveChanges();
                     }
                 }
-                else // Ansonsten fügen wir eine neue Adresse hinzu
+                else 
                 {
-                    var selectedKunde = (Kunde)CbKunden.SelectedItem; // Ausgewählten Kunden aus der ComboBox abrufen
+                    var selectedKunde = (Kunde)CbKunden.SelectedItem; 
                     var neueAdresse = new Adresse { Strasse = TxtStrasse.Text, PLZ = TxtPLZ.Text, Ort = TxtOrt.Text, KundeId = selectedKunde.KundenNr };
 
-                    // Neue Adresse zur Datenbank hinzufügen
+                  
                     context.Adresse.Add(neueAdresse);
 
-                    // Änderungen in der Datenbank speichern
+                    
                     context.SaveChanges();
                 }
             }

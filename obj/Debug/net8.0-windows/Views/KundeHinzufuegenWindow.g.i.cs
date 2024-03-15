@@ -93,7 +93,7 @@ namespace Auftragsverwaltung.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Auftragsverwaltung;V1.0.0.0;component/views/kundehinzufuegenwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Auftragsverwaltung;component/views/kundehinzufuegenwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\KundeHinzufuegenWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
